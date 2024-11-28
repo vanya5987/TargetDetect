@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\source\\repos\\TestTask\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C0510A99-BFBD-4CC4-9E9E-DB1883EA6DB0}|TestTask\\TestTask.csproj|c:\\users\\admin\\source\\repos\\testtask\\testtask\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0510A99-BFBD-4CC4-9E9E-DB1883EA6DB0}|TestTask\\TestTask.csproj|solutionrelative:testtask\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C0510A99-BFBD-4CC4-9E9E-DB1883EA6DB0}|TestTask\\TestTask.csproj|c:\\users\\admin\\source\\repos\\testtask\\testtask\\findrectanglesalghoritm\\rectanglesfinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0510A99-BFBD-4CC4-9E9E-DB1883EA6DB0}|TestTask\\TestTask.csproj|solutionrelative:testtask\\findrectanglesalghoritm\\rectanglesfinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0510A99-BFBD-4CC4-9E9E-DB1883EA6DB0}|TestTask\\TestTask.csproj|c:\\users\\admin\\source\\repos\\testtask\\testtask\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0510A99-BFBD-4CC4-9E9E-DB1883EA6DB0}|TestTask\\TestTask.csproj|solutionrelative:testtask\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0510A99-BFBD-4CC4-9E9E-DB1883EA6DB0}|TestTask\\TestTask.csproj|c:\\users\\admin\\source\\repos\\testtask\\testtask\\framecontrol\\framecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -43,7 +43,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "RectanglesFinder.cs",
               "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\TestTask\\TestTask\\FindRectanglesAlghoritm\\RectanglesFinder.cs",
               "RelativeDocumentMoniker": "TestTask\\FindRectanglesAlghoritm\\RectanglesFinder.cs",
@@ -56,13 +56,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\TestTask\\TestTask\\Form1.cs",
               "RelativeDocumentMoniker": "TestTask\\Form1.cs",
               "ToolTip": "C:\\Users\\admin\\source\\repos\\TestTask\\TestTask\\Form1.cs",
               "RelativeToolTip": "TestTask\\Form1.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAYwCoAAACKAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwCoAAACKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-27T17:06:56.109Z",
               "EditorCaption": ""
