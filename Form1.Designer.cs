@@ -39,8 +39,6 @@
             toolStripSeparator1 = new ToolStripSeparator();
             VievVideo = new ToolStripButton();
             toolStripSeparator2 = new ToolStripSeparator();
-            RipersRemover = new ToolStripButton();
-            toolStripSeparator3 = new ToolStripSeparator();
             PointCoordinateLabel = new ToolStripLabel();
             ExitButton = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)OriginalPictures).BeginInit();
@@ -52,8 +50,7 @@
             OriginalPictures.Dock = DockStyle.Fill;
             OriginalPictures.Location = new Point(0, 24);
             OriginalPictures.Name = "OriginalPictures";
-            OriginalPictures.Size = new Size(946, 569);
-            OriginalPictures.SizeMode = PictureBoxSizeMode.Zoom;
+            OriginalPictures.Size = new Size(634, 494);
             OriginalPictures.TabIndex = 4;
             OriginalPictures.TabStop = false;
             // 
@@ -62,7 +59,7 @@
             menuStrip2.ImageScalingSize = new Size(20, 20);
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(946, 24);
+            menuStrip2.Size = new Size(634, 24);
             menuStrip2.TabIndex = 5;
             menuStrip2.Text = "menuStrip2";
             // 
@@ -75,10 +72,10 @@
             // toolStrip1
             // 
             toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { ChangeCameraLanel, CameraChoice, toolStripSeparator1, VievVideo, toolStripSeparator2, RipersRemover, toolStripSeparator3, PointCoordinateLabel, ExitButton });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { ChangeCameraLanel, CameraChoice, toolStripSeparator1, VievVideo, toolStripSeparator2, PointCoordinateLabel, ExitButton });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(946, 28);
+            toolStrip1.Size = new Size(634, 28);
             toolStrip1.TabIndex = 7;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -114,21 +111,6 @@
             toolStripSeparator2.Name = "toolStripSeparator2";
             toolStripSeparator2.Size = new Size(6, 28);
             // 
-            // RipersRemover
-            // 
-            RipersRemover.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            RipersRemover.Image = (System.Drawing.Image)resources.GetObject("RipersRemover.Image");
-            RipersRemover.ImageTransparentColor = Color.Magenta;
-            RipersRemover.Name = "RipersRemover";
-            RipersRemover.Size = new Size(136, 25);
-            RipersRemover.Text = "Удалить маркеры";
-            RipersRemover.Click += RipersRemoverClick;
-            // 
-            // toolStripSeparator3
-            // 
-            toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(6, 28);
-            // 
             // PointCoordinateLabel
             // 
             PointCoordinateLabel.Name = "PointCoordinateLabel";
@@ -148,10 +130,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(946, 593);
+            ClientSize = new Size(634, 518);
             Controls.Add(toolStrip1);
             Controls.Add(OriginalPictures);
             Controls.Add(menuStrip2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "TestTask";
             Text = "TestTask";
             Load += TestTaskLoad;
@@ -172,8 +156,6 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton VievVideo;
         private ToolStripSeparator toolStripSeparator2;
-        private ToolStripButton RipersRemover;
-        private ToolStripSeparator toolStripSeparator3;
         private ToolStripLabel PointCoordinateLabel;
         private ToolStripButton ExitButton;
     }

@@ -5,6 +5,7 @@ using TestTask.RiperControl;
 using TestTask.CheckValidate;
 using TestTask.FrameControl;
 using TestTask.PictureFilters;
+using TestTask.FindRectanglesAlgorithm;
 
 
 namespace TestTask
@@ -25,8 +26,8 @@ namespace TestTask
         private readonly RiperController _riperController;
         private readonly ValidateChecker _validateChecker;
         private readonly FrameController _frameController;
-        private readonly SobelFilter _silverFilter;
         private readonly GrayscaleThresholdingDilateFilter _grayscaleThresholdingDilateFilter;
+        private readonly RectanglesFinder _rectanglesFinder;
 
 
         private VideoCapture _capture;
@@ -41,8 +42,8 @@ namespace TestTask
             _riperController = new RiperController(_landmarks, _draggingIndex, MaxLandmarks) ?? throw new ArgumentNullException(nameof(_riperController));
             _validateChecker = new ValidateChecker(_landmarks, MaxLandmarks, MinWidth, MinHeight) ?? throw new ArgumentException(nameof(_validateChecker));
             _frameController = new FrameController(_landmarks, MaxLandmarks) ?? throw new ArgumentNullException(nameof(_frameController));
-            _silverFilter = new SobelFilter() ?? throw new ArgumentNullException(nameof(_silverFilter));
             _grayscaleThresholdingDilateFilter = new GrayscaleThresholdingDilateFilter() ?? throw new ArgumentNullException(nameof(_grayscaleThresholdingDilateFilter));
+            _rectanglesFinder = new RectanglesFinder(_landmarks) ?? throw new ArgumentNullException(nameof(_rectanglesFinder));
 
             CallEvents();
         }
@@ -80,13 +81,16 @@ namespace TestTask
 
         private void CaptureStandartImageGrabbed(object? sender, EventArgs e)
         {
-            Bitmap grayscaleThresholdingFilter = _grayscaleThresholdingDilateFilter.ApplyGrayscaleThresholdAndDilate(_imageGetter.GetStandartImage(_capture, _mat), 128, 3);
-            OriginalPictures.Image = grayscaleThresholdingFilter;
-        }
+            if (_landmarks.Count == 4)
+            {
+                Bitmap grayscaleThresholdingDilateFilter = _grayscaleThresholdingDilateFilter.ApplyGrayscaleThresholdAndDilate(_imageGetter.GetStandartImage(_capture, _mat), 128, 3);
+                List<Rectangle> rectangles = _rectanglesFinder.FindRectangles(grayscaleThresholdingDilateFilter,MinWidth,MinHeight);
+                Bitmap detectedRectangles = _rectanglesFinder.DrawRectanglesOnBitmap(grayscaleThresholdingDilateFilter, rectangles);
+                OriginalPictures.Image = detectedRectangles;
+            }
+            else
+                OriginalPictures.Image = _imageGetter.GetStandartImage(_capture, _mat);
 
-        private void RipersRemoverClick(object sender, EventArgs e)
-        {
-            _landmarks.Clear();
             OriginalPictures.Invalidate();
         }
 
