@@ -1,9 +1,10 @@
 ﻿using Emgu.CV;
 using Emgu.CV.Structure;
+using TestTask.Interfaces;
 
 namespace TestTask.Image
 {
-    internal class ImageGetter
+    internal sealed class ImageGetter : IStandartImageGetter
     {
         public Bitmap GetStandartImage(VideoCapture capture, Mat mat)
         {

@@ -38,9 +38,13 @@
             CameraChoice = new ToolStripComboBox();
             toolStripSeparator1 = new ToolStripSeparator();
             VievVideo = new ToolStripButton();
-            toolStripSeparator2 = new ToolStripSeparator();
+            CoordinatesLabel = new ToolStripLabel();
             PointCoordinateLabel = new ToolStripLabel();
             ExitButton = new ToolStripButton();
+            CircleRipers = new Button();
+            SquareRipers = new Button();
+            CrossRipers = new Button();
+            ChooseRipers = new Label();
             ((System.ComponentModel.ISupportInitialize)OriginalPictures).BeginInit();
             toolStrip1.SuspendLayout();
             SuspendLayout();
@@ -48,6 +52,7 @@
             // OriginalPictures
             // 
             OriginalPictures.Dock = DockStyle.Fill;
+            OriginalPictures.Enabled = false;
             OriginalPictures.Location = new Point(0, 24);
             OriginalPictures.Name = "OriginalPictures";
             OriginalPictures.Size = new Size(634, 494);
@@ -71,8 +76,9 @@
             // 
             // toolStrip1
             // 
+            toolStrip1.Enabled = false;
             toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { ChangeCameraLanel, CameraChoice, toolStripSeparator1, VievVideo, toolStripSeparator2, PointCoordinateLabel, ExitButton });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { ChangeCameraLanel, CameraChoice, toolStripSeparator1, VievVideo, CoordinatesLabel, PointCoordinateLabel, ExitButton });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(634, 28);
@@ -106,10 +112,11 @@
             VievVideo.Text = "Смотреть";
             VievVideo.Click += VievVideoClick;
             // 
-            // toolStripSeparator2
+            // CoordinatesLabel
             // 
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(6, 28);
+            CoordinatesLabel.Name = "CoordinatesLabel";
+            CoordinatesLabel.Size = new Size(96, 25);
+            CoordinatesLabel.Text = "Координаты";
             // 
             // PointCoordinateLabel
             // 
@@ -126,11 +133,54 @@
             ExitButton.Text = "Выход";
             ExitButton.Click += ExitButtonClick;
             // 
+            // CircleRipers
+            // 
+            CircleRipers.Location = new Point(166, 242);
+            CircleRipers.Name = "CircleRipers";
+            CircleRipers.Size = new Size(94, 29);
+            CircleRipers.TabIndex = 9;
+            CircleRipers.Text = "Круг";
+            CircleRipers.UseVisualStyleBackColor = true;
+            CircleRipers.Click += CircleRipers_Click;
+            // 
+            // SquareRipers
+            // 
+            SquareRipers.Location = new Point(266, 242);
+            SquareRipers.Name = "SquareRipers";
+            SquareRipers.Size = new Size(94, 29);
+            SquareRipers.TabIndex = 10;
+            SquareRipers.Text = "Квадрат";
+            SquareRipers.UseVisualStyleBackColor = true;
+            SquareRipers.Click += SquareRipers_Click;
+            // 
+            // CrossRipers
+            // 
+            CrossRipers.Location = new Point(366, 242);
+            CrossRipers.Name = "CrossRipers";
+            CrossRipers.Size = new Size(94, 29);
+            CrossRipers.TabIndex = 11;
+            CrossRipers.Text = "Крест";
+            CrossRipers.UseVisualStyleBackColor = true;
+            CrossRipers.Click += CrossRiper_Click;
+            // 
+            // ChooseRipers
+            // 
+            ChooseRipers.AutoSize = true;
+            ChooseRipers.Location = new Point(212, 206);
+            ChooseRipers.Name = "ChooseRipers";
+            ChooseRipers.Size = new Size(200, 20);
+            ChooseRipers.TabIndex = 12;
+            ChooseRipers.Text = "Выберите форму риперов :";
+            // 
             // TestTask
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(634, 518);
+            Controls.Add(ChooseRipers);
+            Controls.Add(CrossRipers);
+            Controls.Add(SquareRipers);
+            Controls.Add(CircleRipers);
             Controls.Add(toolStrip1);
             Controls.Add(OriginalPictures);
             Controls.Add(menuStrip2);
@@ -147,7 +197,6 @@
         }
 
         #endregion
-        private PictureBox OriginalPictures;
         private MenuStrip menuStrip2;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStrip toolStrip1;
@@ -155,8 +204,13 @@
         private ToolStripComboBox CameraChoice;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton VievVideo;
-        private ToolStripSeparator toolStripSeparator2;
         private ToolStripLabel PointCoordinateLabel;
         private ToolStripButton ExitButton;
+        private PictureBox OriginalPictures;
+        private ToolStripLabel CoordinatesLabel;
+        private Button CircleRipers;
+        private Button SquareRipers;
+        private Button CrossRipers;
+        private Label ChooseRipers;
     }
 }
