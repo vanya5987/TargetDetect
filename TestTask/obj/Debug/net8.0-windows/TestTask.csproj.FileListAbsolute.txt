@@ -51,3 +51,4 @@ C:\Users\admin\source\repos\TestTask\TestTask\bin\Debug\net8.0-windows\runtimes\
 C:\Users\admin\source\repos\TestTask\TestTask\bin\Debug\net8.0-windows\runtimes\win-x86\native\msvcp140_atomic_wait.dll
 C:\Users\admin\source\repos\TestTask\TestTask\bin\Debug\net8.0-windows\runtimes\win-x86\native\msvcp140_codecvt_ids.dll
 C:\Users\admin\source\repos\TestTask\TestTask\bin\Debug\net8.0-windows\runtimes\win-x86\native\vcruntime140.dll
+C:\Users\admin\source\repos\TestTask\TestTask\obj\Debug\net8.0-windows\TestTask.sourcelink.json

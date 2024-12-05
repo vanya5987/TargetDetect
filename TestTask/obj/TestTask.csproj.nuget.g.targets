@@ -2,5 +2,6 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)system.text.json\8.0.1\buildTransitive\net6.0\System.Text.Json.targets" Condition="Exists('$(NuGetPackageRoot)system.text.json\8.0.1\buildTransitive\net6.0\System.Text.Json.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.vcrtforwarders.140\1.1.0\build\netcoreapp2.0\Microsoft.VCRTForwarders.140.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.vcrtforwarders.140\1.1.0\build\netcoreapp2.0\Microsoft.VCRTForwarders.140.targets')" />
   </ImportGroup>
 </Project>

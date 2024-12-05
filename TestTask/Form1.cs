@@ -5,6 +5,9 @@ using TestTask.RiperControl;
 using TestTask.CheckValidate;
 using TestTask.FrameControl;
 using TestTask.PictureFilters;
+using TestTask.FindRectanglesAlgorithm;
+using TestTask.DrawTarget;
+using TestTask.Interfaces;
 
 
 namespace TestTask
@@ -20,15 +23,18 @@ namespace TestTask
         private int _draggingIndex = -1;
         private bool _cameraStartedMessageShow = false;
 
+        private readonly IStandartImageGetter _imageGetter;
+        private readonly IFiducialMarkMoveController _ripersMoveController;
+        private readonly ITargetValidateChecker _targetValidateChecker;
+        private readonly ICamsValidateChecker _camsValidateChecker;
+        private readonly IFiducialMarksDrawler _riperDrawer;
+        private readonly ICombineFilterApplyer _combineFilter;
+        private readonly ITargetFinder _targetFinder;
+        private readonly ITargetsDrawer _targetDrawer;
         private readonly Mat _mat;
-        private readonly ImageGetter _imageGetter;
-        private readonly RiperController _riperController;
-        private readonly ValidateChecker _validateChecker;
-        private readonly FrameController _frameController;
-        private readonly SobelFilter _silverFilter;
-        private readonly GrayscaleThresholdingDilateFilter _grayscaleThresholdingDilateFilter;
 
 
+        private ShapeType _shapeType;
         private VideoCapture _capture;
         private DsDevice[] _cams;
 
@@ -38,13 +44,15 @@ namespace TestTask
 
             _mat = new Mat() ?? throw new ArgumentNullException(nameof(_mat));
             _imageGetter = new ImageGetter() ?? throw new ArgumentNullException(nameof(_imageGetter));
-            _riperController = new RiperController(_landmarks, _draggingIndex, MaxLandmarks) ?? throw new ArgumentNullException(nameof(_riperController));
-            _validateChecker = new ValidateChecker(_landmarks, MaxLandmarks, MinWidth, MinHeight) ?? throw new ArgumentException(nameof(_validateChecker));
-            _frameController = new FrameController(_landmarks, MaxLandmarks) ?? throw new ArgumentNullException(nameof(_frameController));
-            _silverFilter = new SobelFilter() ?? throw new ArgumentNullException(nameof(_silverFilter));
-            _grayscaleThresholdingDilateFilter = new GrayscaleThresholdingDilateFilter() ?? throw new ArgumentNullException(nameof(_grayscaleThresholdingDilateFilter));
+            _ripersMoveController = new FiducialMarkMoveController(_landmarks, _draggingIndex, MaxLandmarks) ?? throw new ArgumentNullException(nameof(_ripersMoveController));
+            _targetValidateChecker = new ValidateChecker(_landmarks, MaxLandmarks, MinWidth, MinHeight) ?? throw new ArgumentException(nameof(_targetValidateChecker));
+            _camsValidateChecker = new ValidateChecker(_landmarks, MaxLandmarks, MinWidth, MinHeight) ?? throw new ArgumentException(nameof(_camsValidateChecker));
+            _riperDrawer = new FiducialMarksDrawer(_landmarks, MaxLandmarks) ?? throw new ArgumentNullException(nameof(_riperDrawer));
+            _combineFilter = new CombineFilter() ?? throw new ArgumentNullException(nameof(_combineFilter));
+            _targetFinder = new TargetFinder(_landmarks) ?? throw new ArgumentNullException(nameof(_targetFinder));
+            _targetDrawer = new TargetDrawer(CoordinatesLabel) ?? throw new ArgumentNullException(nameof(_targetDrawer));
 
-            CallEvents();
+            CallFrameEvents();
         }
 
         private void TestTaskLoad(object sender, EventArgs e)
@@ -62,12 +70,11 @@ namespace TestTask
 
         private void VievVideoClick(object sender, EventArgs e)
         {
-            _validateChecker.CheckValidateCams(CameraChoice, _cams);
+            OriginalPictures.Enabled = true;
 
+            _camsValidateChecker.CheckValidateCams(CameraChoice, _cams);
             _capture = new VideoCapture(_selectedCameraId);
-
             _capture.ImageGrabbed += CaptureStandartImageGrabbed;
-
             _capture.Start();
 
             if (!_cameraStartedMessageShow)
@@ -80,54 +87,80 @@ namespace TestTask
 
         private void CaptureStandartImageGrabbed(object? sender, EventArgs e)
         {
-            Bitmap grayscaleThresholdingFilter = _grayscaleThresholdingDilateFilter.ApplyGrayscaleThresholdAndDilate(_imageGetter.GetStandartImage(_capture, _mat), 128, 3);
-            OriginalPictures.Image = grayscaleThresholdingFilter;
-        }
+            if (_landmarks.Count == 4)
+            {
+                Bitmap combineFilter = _combineFilter.ApplyCombineFilter(_imageGetter.GetStandartImage(_capture, _mat), 128, 3);
+                List<Rectangle> rectangles = _targetFinder.FindTarget(combineFilter, MinWidth, MinHeight);
+                Bitmap detectedRectangles = _targetDrawer.DrawTargets(combineFilter, rectangles);
+                OriginalPictures.Image = detectedRectangles;
+            }
+            else
+                OriginalPictures.Image = _imageGetter.GetStandartImage(_capture, _mat);
 
-        private void RipersRemoverClick(object sender, EventArgs e)
-        {
-            _landmarks.Clear();
             OriginalPictures.Invalidate();
         }
 
-        private void ExitButtonClick(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void FramePicturesClick(object sender, MouseEventArgs e)
-        {
-            _riperController.SetLandmarks(OriginalPictures, _validateChecker, e);
-        }
-
-        private void FramePicturesPaint(object sender, PaintEventArgs e)
-        {
-            _frameController.DrawRipers(e, PointCoordinateLabel.Text);
-        }
-
-        private void FramePicturesMouseDown(object sender, MouseEventArgs e)
-        {
-            _riperController.ClickToLandmarks(e);
-        }
-
-        private void FramePicturesMouseMove(object sender, MouseEventArgs e)
-        {
-            _riperController.MoveLandmarks(e, OriginalPictures);
-        }
-
-        private void FramePicturesMouseUp(object sender, MouseEventArgs e)
-        {
-            _riperController.ThrowLandmarks(e);
-            _validateChecker.CheckValidateRectangle();
-        }
-
-        private void CallEvents()
+        private void CallFrameEvents()
         {
             OriginalPictures.MouseClick += FramePicturesClick;
             OriginalPictures.Paint += FramePicturesPaint;
             OriginalPictures.MouseDown += FramePicturesMouseDown;
             OriginalPictures.MouseMove += FramePicturesMouseMove;
             OriginalPictures.MouseUp += FramePicturesMouseUp;
+        }
+
+        private void FramePicturesClick(object sender, MouseEventArgs e)
+        {
+            _ripersMoveController.SetLandmarks(OriginalPictures, _targetValidateChecker, e);
+        }
+
+        private void FramePicturesPaint(object sender, PaintEventArgs e)
+        {
+
+            _riperDrawer.DrawFiducialMarks(e, PointCoordinateLabel.Text, _shapeType);
+        }
+
+        private void FramePicturesMouseDown(object sender, MouseEventArgs e)
+        {
+            _ripersMoveController.ClickToLandmarks(e);
+        }
+
+        private void FramePicturesMouseMove(object sender, MouseEventArgs e)
+        {
+            _ripersMoveController.MoveLandmarks(e, OriginalPictures);
+        }
+
+        private void FramePicturesMouseUp(object sender, MouseEventArgs e)
+        {
+            _ripersMoveController.ThrowLandmarks(e);
+            _targetValidateChecker.CheckValidateTarget();
+        }
+
+        private void CircleRipers_Click(object sender, EventArgs e)
+        {
+            _shapeType = ShapeType.Circle;
+            DisposeChooseButtons();
+        }
+
+        private void SquareRipers_Click(object sender, EventArgs e)
+        {
+            _shapeType = ShapeType.Square;
+            DisposeChooseButtons();
+        }
+
+        private void CrossRiper_Click(object sender, EventArgs e)
+        {
+            _shapeType = ShapeType.Cross;
+            DisposeChooseButtons();
+        }
+
+        private void DisposeChooseButtons()
+        {
+            toolStrip1.Enabled = true;
+            CircleRipers.Dispose();
+            SquareRipers.Dispose();
+            CrossRipers.Dispose();
+            ChooseRipers.Dispose();
         }
     }
 }

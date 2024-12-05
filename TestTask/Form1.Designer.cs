@@ -38,11 +38,12 @@
             CameraChoice = new ToolStripComboBox();
             toolStripSeparator1 = new ToolStripSeparator();
             VievVideo = new ToolStripButton();
-            toolStripSeparator2 = new ToolStripSeparator();
-            RipersRemover = new ToolStripButton();
-            toolStripSeparator3 = new ToolStripSeparator();
+            CoordinatesLabel = new ToolStripLabel();
             PointCoordinateLabel = new ToolStripLabel();
-            ExitButton = new ToolStripButton();
+            CircleRipers = new Button();
+            SquareRipers = new Button();
+            CrossRipers = new Button();
+            ChooseRipers = new Label();
             ((System.ComponentModel.ISupportInitialize)OriginalPictures).BeginInit();
             toolStrip1.SuspendLayout();
             SuspendLayout();
@@ -50,10 +51,10 @@
             // OriginalPictures
             // 
             OriginalPictures.Dock = DockStyle.Fill;
+            OriginalPictures.Enabled = false;
             OriginalPictures.Location = new Point(0, 24);
             OriginalPictures.Name = "OriginalPictures";
-            OriginalPictures.Size = new Size(946, 569);
-            OriginalPictures.SizeMode = PictureBoxSizeMode.Zoom;
+            OriginalPictures.Size = new Size(620, 477);
             OriginalPictures.TabIndex = 4;
             OriginalPictures.TabStop = false;
             // 
@@ -62,7 +63,7 @@
             menuStrip2.ImageScalingSize = new Size(20, 20);
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(946, 24);
+            menuStrip2.Size = new Size(620, 24);
             menuStrip2.TabIndex = 5;
             menuStrip2.Text = "menuStrip2";
             // 
@@ -74,11 +75,12 @@
             // 
             // toolStrip1
             // 
+            toolStrip1.Enabled = false;
             toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { ChangeCameraLanel, CameraChoice, toolStripSeparator1, VievVideo, toolStripSeparator2, RipersRemover, toolStripSeparator3, PointCoordinateLabel, ExitButton });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { ChangeCameraLanel, CameraChoice, toolStripSeparator1, VievVideo, CoordinatesLabel, PointCoordinateLabel });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(946, 28);
+            toolStrip1.Size = new Size(620, 28);
             toolStrip1.TabIndex = 7;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -109,49 +111,70 @@
             VievVideo.Text = "Смотреть";
             VievVideo.Click += VievVideoClick;
             // 
-            // toolStripSeparator2
+            // CoordinatesLabel
             // 
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(6, 28);
-            // 
-            // RipersRemover
-            // 
-            RipersRemover.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            RipersRemover.Image = (System.Drawing.Image)resources.GetObject("RipersRemover.Image");
-            RipersRemover.ImageTransparentColor = Color.Magenta;
-            RipersRemover.Name = "RipersRemover";
-            RipersRemover.Size = new Size(136, 25);
-            RipersRemover.Text = "Удалить маркеры";
-            RipersRemover.Click += RipersRemoverClick;
-            // 
-            // toolStripSeparator3
-            // 
-            toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(6, 28);
+            CoordinatesLabel.Name = "CoordinatesLabel";
+            CoordinatesLabel.Size = new Size(96, 25);
+            CoordinatesLabel.Text = "Координаты";
             // 
             // PointCoordinateLabel
             // 
             PointCoordinateLabel.Name = "PointCoordinateLabel";
             PointCoordinateLabel.Size = new Size(0, 25);
             // 
-            // ExitButton
+            // CircleRipers
             // 
-            ExitButton.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            ExitButton.Image = (System.Drawing.Image)resources.GetObject("ExitButton.Image");
-            ExitButton.ImageTransparentColor = Color.Magenta;
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(57, 25);
-            ExitButton.Text = "Выход";
-            ExitButton.Click += ExitButtonClick;
+            CircleRipers.Location = new Point(166, 242);
+            CircleRipers.Name = "CircleRipers";
+            CircleRipers.Size = new Size(94, 29);
+            CircleRipers.TabIndex = 9;
+            CircleRipers.Text = "Круг";
+            CircleRipers.UseVisualStyleBackColor = true;
+            CircleRipers.Click += CircleRipers_Click;
+            // 
+            // SquareRipers
+            // 
+            SquareRipers.Location = new Point(266, 242);
+            SquareRipers.Name = "SquareRipers";
+            SquareRipers.Size = new Size(94, 29);
+            SquareRipers.TabIndex = 10;
+            SquareRipers.Text = "Квадрат";
+            SquareRipers.UseVisualStyleBackColor = true;
+            SquareRipers.Click += SquareRipers_Click;
+            // 
+            // CrossRipers
+            // 
+            CrossRipers.Location = new Point(366, 242);
+            CrossRipers.Name = "CrossRipers";
+            CrossRipers.Size = new Size(94, 29);
+            CrossRipers.TabIndex = 11;
+            CrossRipers.Text = "Крест";
+            CrossRipers.UseVisualStyleBackColor = true;
+            CrossRipers.Click += CrossRiper_Click;
+            // 
+            // ChooseRipers
+            // 
+            ChooseRipers.AutoSize = true;
+            ChooseRipers.Location = new Point(212, 206);
+            ChooseRipers.Name = "ChooseRipers";
+            ChooseRipers.Size = new Size(200, 20);
+            ChooseRipers.TabIndex = 12;
+            ChooseRipers.Text = "Выберите форму риперов :";
             // 
             // TestTask
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(946, 593);
+            ClientSize = new Size(620, 501);
+            Controls.Add(ChooseRipers);
+            Controls.Add(CrossRipers);
+            Controls.Add(SquareRipers);
+            Controls.Add(CircleRipers);
             Controls.Add(toolStrip1);
             Controls.Add(OriginalPictures);
             Controls.Add(menuStrip2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "TestTask";
             Text = "TestTask";
             Load += TestTaskLoad;
@@ -163,7 +186,6 @@
         }
 
         #endregion
-        private PictureBox OriginalPictures;
         private MenuStrip menuStrip2;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStrip toolStrip1;
@@ -171,10 +193,12 @@
         private ToolStripComboBox CameraChoice;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton VievVideo;
-        private ToolStripSeparator toolStripSeparator2;
-        private ToolStripButton RipersRemover;
-        private ToolStripSeparator toolStripSeparator3;
         private ToolStripLabel PointCoordinateLabel;
-        private ToolStripButton ExitButton;
+        private PictureBox OriginalPictures;
+        private ToolStripLabel CoordinatesLabel;
+        private Button CircleRipers;
+        private Button SquareRipers;
+        private Button CrossRipers;
+        private Label ChooseRipers;
     }
 }

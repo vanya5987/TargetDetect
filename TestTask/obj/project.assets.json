@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net8.0-windows7.0": {
+    "net8.0-windows10.0.17763": {
       "DirectShowLib/1.0.0": {
         "type": "package",
         "compile": {
@@ -209,6 +209,246 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Microsoft.VCRTForwarders.140/1.1.0": {
+        "type": "package",
+        "build": {
+          "build/netcoreapp2.0/Microsoft.VCRTForwarders.140.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/debug/concrt140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/debug/msvcp140_1d_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/debug/msvcp140_2d_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/debug/msvcp140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/debug/msvcp140d_atomic_wait_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/debug/vcamp140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/debug/vccorlib140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/debug/vcomp140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/debug/vcruntime140_1d_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/debug/vcruntime140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/release/concrt140_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/release/msvcp140_1_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/release/msvcp140_2_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/release/msvcp140_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/release/msvcp140_atomic_wait_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/release/vcamp140_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/release/vccorlib140_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/release/vcomp140_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/release/vcruntime140_1_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/release/vcruntime140_app.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/debug/concrt140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/debug/msvcp140_1d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/debug/msvcp140_2d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/debug/msvcp140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/debug/msvcp140d_atomic_wait_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/debug/vcamp140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/debug/vccorlib140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/debug/vcomp140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/debug/vcruntime140_1d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/debug/vcruntime140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/release/concrt140_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/release/msvcp140_1_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/release/msvcp140_2_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/release/msvcp140_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/release/msvcp140_atomic_wait_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/release/vcamp140_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/release/vccorlib140_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/release/vcomp140_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/release/vcruntime140_1_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/release/vcruntime140_app.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/debug/concrt140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/debug/msvcp140_1d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/debug/msvcp140_2d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/debug/msvcp140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/debug/msvcp140d_atomic_wait_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/debug/vcamp140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/debug/vccorlib140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/debug/vcomp140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/debug/vcruntime140d_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/release/concrt140_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/release/msvcp140_1_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/release/msvcp140_2_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/release/msvcp140_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/release/msvcp140_atomic_wait_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/release/vcamp140_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/release/vccorlib140_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/release/vcomp140_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/release/vcruntime140_app.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
         }
       },
       "Microsoft.Win32.SystemEvents/8.0.0": {
@@ -693,6 +933,102 @@
         "microsoft.netcore.targets.1.1.3.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
+      ]
+    },
+    "Microsoft.VCRTForwarders.140/1.1.0": {
+      "sha512": "RqSGSk7kXXEBa4Bu/I7XFmF7Op6DdSmn46gqlywwmvLG/2JDnCsxrAryQfnIilkyt42R4RkOzXdgIzAs2p6XdA==",
+      "type": "package",
+      "path": "microsoft.vcrtforwarders.140/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Unity/Editor/InitVCRTForwarders.cs",
+        "Unity/Editor/InitVCRTForwarders.cs.meta",
+        "Unity/Editor/Microsoft.VCRTForwarders.140.asmdef",
+        "Unity/Editor/Microsoft.VCRTForwarders.140.asmdef.meta",
+        "Unity/x64/concrt140_app.dll",
+        "Unity/x64/concrt140_app.dll.meta",
+        "Unity/x64/msvcp140_1_app.dll",
+        "Unity/x64/msvcp140_1_app.dll.meta",
+        "Unity/x64/msvcp140_2_app.dll",
+        "Unity/x64/msvcp140_2_app.dll.meta",
+        "Unity/x64/msvcp140_app.dll",
+        "Unity/x64/msvcp140_app.dll.meta",
+        "Unity/x64/msvcp140_atomic_wait.dll.meta",
+        "Unity/x64/msvcp140_atomic_wait_app.dll",
+        "Unity/x64/vcamp140_app.dll",
+        "Unity/x64/vcamp140_app.dll.meta",
+        "Unity/x64/vccorlib140_app.dll",
+        "Unity/x64/vccorlib140_app.dll.meta",
+        "Unity/x64/vcomp140_app.dll",
+        "Unity/x64/vcomp140_app.dll.meta",
+        "Unity/x64/vcruntime140_1_app.dll",
+        "Unity/x64/vcruntime140_1_app.dll.meta",
+        "Unity/x64/vcruntime140_app.dll",
+        "Unity/x64/vcruntime140_app.dll.meta",
+        "build/native/Microsoft.VCRTForwarders.140.targets",
+        "build/net45/Microsoft.VCRTForwarders.140.targets",
+        "build/netcoreapp2.0/Microsoft.VCRTForwarders.140.targets",
+        "microsoft.vcrtforwarders.140.1.1.0.nupkg.sha512",
+        "microsoft.vcrtforwarders.140.nuspec",
+        "runtimes/win-arm64/native/debug/concrt140d_app.dll",
+        "runtimes/win-arm64/native/debug/msvcp140_1d_app.dll",
+        "runtimes/win-arm64/native/debug/msvcp140_2d_app.dll",
+        "runtimes/win-arm64/native/debug/msvcp140d_app.dll",
+        "runtimes/win-arm64/native/debug/msvcp140d_atomic_wait_app.dll",
+        "runtimes/win-arm64/native/debug/vcamp140d_app.dll",
+        "runtimes/win-arm64/native/debug/vccorlib140d_app.dll",
+        "runtimes/win-arm64/native/debug/vcomp140d_app.dll",
+        "runtimes/win-arm64/native/debug/vcruntime140_1d_app.dll",
+        "runtimes/win-arm64/native/debug/vcruntime140d_app.dll",
+        "runtimes/win-arm64/native/release/concrt140_app.dll",
+        "runtimes/win-arm64/native/release/msvcp140_1_app.dll",
+        "runtimes/win-arm64/native/release/msvcp140_2_app.dll",
+        "runtimes/win-arm64/native/release/msvcp140_app.dll",
+        "runtimes/win-arm64/native/release/msvcp140_atomic_wait_app.dll",
+        "runtimes/win-arm64/native/release/vcamp140_app.dll",
+        "runtimes/win-arm64/native/release/vccorlib140_app.dll",
+        "runtimes/win-arm64/native/release/vcomp140_app.dll",
+        "runtimes/win-arm64/native/release/vcruntime140_1_app.dll",
+        "runtimes/win-arm64/native/release/vcruntime140_app.dll",
+        "runtimes/win-x64/native/debug/concrt140d_app.dll",
+        "runtimes/win-x64/native/debug/msvcp140_1d_app.dll",
+        "runtimes/win-x64/native/debug/msvcp140_2d_app.dll",
+        "runtimes/win-x64/native/debug/msvcp140d_app.dll",
+        "runtimes/win-x64/native/debug/msvcp140d_atomic_wait_app.dll",
+        "runtimes/win-x64/native/debug/vcamp140d_app.dll",
+        "runtimes/win-x64/native/debug/vccorlib140d_app.dll",
+        "runtimes/win-x64/native/debug/vcomp140d_app.dll",
+        "runtimes/win-x64/native/debug/vcruntime140_1d_app.dll",
+        "runtimes/win-x64/native/debug/vcruntime140d_app.dll",
+        "runtimes/win-x64/native/release/concrt140_app.dll",
+        "runtimes/win-x64/native/release/msvcp140_1_app.dll",
+        "runtimes/win-x64/native/release/msvcp140_2_app.dll",
+        "runtimes/win-x64/native/release/msvcp140_app.dll",
+        "runtimes/win-x64/native/release/msvcp140_atomic_wait_app.dll",
+        "runtimes/win-x64/native/release/vcamp140_app.dll",
+        "runtimes/win-x64/native/release/vccorlib140_app.dll",
+        "runtimes/win-x64/native/release/vcomp140_app.dll",
+        "runtimes/win-x64/native/release/vcruntime140_1_app.dll",
+        "runtimes/win-x64/native/release/vcruntime140_app.dll",
+        "runtimes/win-x86/native/debug/concrt140d_app.dll",
+        "runtimes/win-x86/native/debug/msvcp140_1d_app.dll",
+        "runtimes/win-x86/native/debug/msvcp140_2d_app.dll",
+        "runtimes/win-x86/native/debug/msvcp140d_app.dll",
+        "runtimes/win-x86/native/debug/msvcp140d_atomic_wait_app.dll",
+        "runtimes/win-x86/native/debug/vcamp140d_app.dll",
+        "runtimes/win-x86/native/debug/vccorlib140d_app.dll",
+        "runtimes/win-x86/native/debug/vcomp140d_app.dll",
+        "runtimes/win-x86/native/debug/vcruntime140d_app.dll",
+        "runtimes/win-x86/native/release/concrt140_app.dll",
+        "runtimes/win-x86/native/release/msvcp140_1_app.dll",
+        "runtimes/win-x86/native/release/msvcp140_2_app.dll",
+        "runtimes/win-x86/native/release/msvcp140_app.dll",
+        "runtimes/win-x86/native/release/msvcp140_atomic_wait_app.dll",
+        "runtimes/win-x86/native/release/vcamp140_app.dll",
+        "runtimes/win-x86/native/release/vccorlib140_app.dll",
+        "runtimes/win-x86/native/release/vcomp140_app.dll",
+        "runtimes/win-x86/native/release/vcruntime140_app.dll"
       ]
     },
     "Microsoft.Win32.SystemEvents/8.0.0": {
@@ -1870,11 +2206,12 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0-windows7.0": [
+    "net8.0-windows10.0.17763": [
       "DirectShowLib >= 1.0.0",
       "Emgu.CV >= 4.9.0.5494",
       "Emgu.CV.Bitmap >= 4.9.0.5494",
-      "Emgu.CV.runtime.windows >= 4.9.0.5494"
+      "Emgu.CV.runtime.windows >= 4.9.0.5494",
+      "Microsoft.VCRTForwarders.140 >= 1.1.0"
     ]
   },
   "packageFolders": {
@@ -1894,7 +2231,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0-windows"
+        "net8.0-windows10.0.17763.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -1902,8 +2239,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0-windows7.0": {
-          "targetAlias": "net8.0-windows",
+        "net8.0-windows10.0.17763": {
+          "targetAlias": "net8.0-windows10.0.17763.0",
           "projectReferences": {}
         }
       },
@@ -1919,8 +2256,8 @@
       }
     },
     "frameworks": {
-      "net8.0-windows7.0": {
-        "targetAlias": "net8.0-windows",
+      "net8.0-windows10.0.17763": {
+        "targetAlias": "net8.0-windows10.0.17763.0",
         "dependencies": {
           "DirectShowLib": {
             "target": "Package",
@@ -1937,6 +2274,10 @@
           "Emgu.CV.runtime.windows": {
             "target": "Package",
             "version": "[4.9.0.5494, )"
+          },
+          "Microsoft.VCRTForwarders.140": {
+            "target": "Package",
+            "version": "[1.1.0, )"
           }
         },
         "imports": [
@@ -1950,8 +2291,17 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.Windows.SDK.NET.Ref",
+            "version": "[10.0.17763.34, 10.0.17763.34]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.Windows.SDK.NET.Ref": {
             "privateAssets": "all"
           },
           "Microsoft.WindowsDesktop.App.WindowsForms": {
@@ -1967,10 +2317,10 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Пакет \"DirectShowLib 1.0.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net8.0-windows7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "message": "Пакет \"DirectShowLib 1.0.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net8.0-windows10.0.17763\". Этот пакет может быть не полностью совместим с вашим проектом.",
       "libraryId": "DirectShowLib",
       "targetGraphs": [
-        "net8.0-windows7.0"
+        "net8.0-windows10.0.17763"
       ]
     }
   ]

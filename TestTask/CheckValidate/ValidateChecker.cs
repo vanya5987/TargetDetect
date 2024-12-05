@@ -1,8 +1,9 @@
 ﻿using DirectShowLib;
+using TestTask.Interfaces;
 
 namespace TestTask.CheckValidate
 {
-    internal class ValidateChecker
+    internal sealed class ValidateChecker : ITargetValidateChecker, ICamsValidateChecker
     {
         private readonly List<Point> _landmarks;
         private int _maxLandmarks;
@@ -24,7 +25,7 @@ namespace TestTask.CheckValidate
                 throw new IndexOutOfRangeException(nameof(_minWidth));
         }
 
-        public void CheckValidateRectangle()
+        public void CheckValidateTarget()
         {
             if (_landmarks.Count < _maxLandmarks)
                 return;
